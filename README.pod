@@ -1,0 +1,74 @@
+=head1 NAME
+
+MooseX::DFV - Data::FormValidator with Moose types and added sugar
+
+=head1 VERSION 0.01
+
+=head1 SYNOPSIS
+
+  use MooseX::DFV;
+  use Moose::Util::TypeConstraints;
+
+  my $person_prof = profile (
+      required => [qw/salary name/],
+      constraints => {
+          salary => {
+              name => 'Salary',
+              type =>  subtype as 'Int'
+                       => where { $_ > 10000 },
+          },
+          name => {
+             name => 'Full name',
+             type => 'Str',
+          },
+      }
+  );
+
+  my $params = { salary => '20000', name => 'Jim Bob'};
+
+  my $result = validate $params, against => $person_prof;
+
+
+=head1 DESCRIPTION
+
+This module allows you to use Moose type constraints with 
+
+=head2 EXPORT
+
+=head3 profile
+
+Declare a new DFV profile
+
+ my $profile = profile ( required=>[qw/field1 field2/],
+    constraints => {
+        field1 => {..}
+    },
+ );
+
+=head3 validate
+
+Validate parameters against a profile 
+
+  my $result = validate $params, against => $profile_name;
+
+=head1 SEE ALSO
+
+Data::FormValidator Moose::Util::TypeConstraints MooseX::Types
+
+=head1 REPOSITORY
+
+ git://github.com/robinedwards/MooseX-DFV.git
+
+=head1 AUTHOR
+
+Rob Edwards, E<lt>robin.ge@gmail.comE<gt>
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2010 by Rob Edwards
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.8 or,
+at your option, any later version of Perl 5 you may have available.
+
+=cut

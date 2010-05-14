@@ -1,0 +1,13 @@
+Changes
+lib/MooseX/DFV.pm
+lib/MooseX/DFV/Results.pm
+Makefile.PL
+MANIFEST
+README.pod
+t/messages.t
+t/moose_anon_types.t
+t/moose_builtin_types.t
+t/moosex_types.t
+t/sugar.t
+t/use.t
+META.yml                                 Module meta-data (added by MakeMaker)

@@ -1,0 +1,25 @@
+--- #YAML:1.0
+name:               MooseX-DFV
+version:            0.01
+abstract:           Data::FormValidator with Moose types and added sugar
+author:
+    - Rob Edwards <robin.ge@gmail.com>
+license:            unknown
+distribution_type:  module
+configure_requires:
+    ExtUtils::MakeMaker:  0
+requires:
+    Data::FormValidator:  4.66
+    Moose:                0.6
+    MooseX::Types:        0.2
+    Perl6::Junction:      1.4
+    String::CamelCase:    0.02
+    Test::More:           0
+no_index:
+    directory:
+        - t
+        - inc
+generated_by:       ExtUtils::MakeMaker version 6.48
+meta-spec:
+    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
+    version:  1.4
